@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle with subtle glow effect -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="scanlines">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" seed="2"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer glow -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#ffaa00" stroke-width="2" opacity="0.3" filter="url(#glow)"/>
+  
+  <!-- Main circle background -->
+  <circle cx="100" cy="100" r="90" fill="#0a0a0a" stroke="#ffaa00" stroke-width="2"/>
+  
+  <!-- Scanlines effect overlay -->
+  <rect x="10" y="10" width="180" height="180" fill="url(#scanlines)" opacity="0.05"/>
+  
+  <!-- Terminal frame lines -->
+  <g stroke="#ffaa00" stroke-width="1.5" fill="none">
+    <!-- Top bar -->
+    <line x1="30" y1="50" x2="170" y2="50"/>
+    <!-- Bottom bar -->
+    <line x1="30" y1="150" x2="170" y2="150"/>
+    <!-- Left bar -->
+    <line x1="50" y1="30" x2="50" y2="170"/>
+    <!-- Right bar -->
+    <line x1="150" y1="30" x2="150" y2="170"/>
+  </g>
+  
+  <!-- Corner brackets -->
+  <g stroke="#ffaa00" stroke-width="2" fill="none" stroke-linecap="round">
+    <!-- Top-left -->
+    <path d="M 30 30 L 30 55 M 30 30 L 55 30"/>
+    <!-- Top-right -->
+    <path d="M 170 30 L 170 55 M 170 30 L 145 30"/>
+    <!-- Bottom-left -->
+    <path d="M 30 170 L 30 145 M 30 170 L 55 170"/>
+    <!-- Bottom-right -->
+    <path d="M 170 170 L 170 145 M 170 170 L 145 170"/>
+  </g>
+  
+  <!-- Center VP text -->
+  <text x="100" y="115" font-family="'Roboto Mono', monospace" font-size="48" font-weight="bold" fill="#ffaa00" text-anchor="middle" letter-spacing="2">VP</text>
+  
+  <!-- Blinking cursor indicator -->
+  <circle cx="100" cy="65" r="3" fill="#ffaa00" opacity="0.8"/>
+  
+  <!-- Bottom status text -->
+  <text x="100" y="135" font-family="'Roboto Mono', monospace" font-size="10" fill="#ffaa00" text-anchor="middle" opacity="0.7" letter-spacing="1">PRO</text>
+  
+  <!-- Subtle vertical scanline pattern -->
+  <g stroke="#ffaa00" stroke-width="0.5" opacity="0.1">
+    <line x1="60" y1="50" x2="60" y2="150"/>
+    <line x1="80" y1="50" x2="80" y2="150"/>
+    <line x1="100" y1="50" x2="100" y2="150"/>
+    <line x1="120" y1="50" x2="120" y2="150"/>
+    <line x1="140" y1="50" x2="140" y2="150"/>
+  </g>
+</svg>
